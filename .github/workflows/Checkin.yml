@@ -1,0 +1,28 @@
+name: PicACG-Auto-Checkin
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC+8 08:00
+    - cron: "0 0 * * *"
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    environment: PICACG
+    env:
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWD: ${{ secrets.PASSWD }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js latest
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Checkin
+        shell: bash
+        run: |
+          node ./dist/pac.js
