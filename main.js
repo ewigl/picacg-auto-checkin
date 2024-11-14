@@ -107,7 +107,7 @@ async function punchIn(token) {
     if (res.ststus === "success") {
       console.log("成功打哔咔。");
     } else {
-      console.log("今天已经打过了。");
+      console.log("今天已经打过哔咔了。");
     }
   } else {
     handleError(response);
