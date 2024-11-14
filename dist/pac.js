@@ -6696,7 +6696,7 @@ async function punchIn(token) {
     if (res.ststus === "success") {
       console.log("\u6210\u529F\u6253\u54D4\u5494\u3002");
     } else {
-      console.log("\u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u4E86\u3002");
+      console.log("\u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u54D4\u5494\u4E86\u3002");
     }
   } else {
     handleError(response);
