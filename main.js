@@ -104,9 +104,9 @@ async function punchIn(token) {
   if (response.code === 200) {
     let res = response.data.res;
 
-    if (res.ststus === "success") {
+    if (res.ststus === "ok") {
       console.log("成功打哔咔。");
-    } else {
+    } else if (res.ststus === "fail") {
       console.log("今天已经打过哔咔了。");
     }
   } else {
