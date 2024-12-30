@@ -1,6 +1,8 @@
 ## PicACG 哔咔漫画 定时自动签到 （打哔咔）
 
-[![文档](https://img.shields.io/badge/文档-blue)](https://ewigl.github.io/notes/posts/programming/github-actions/)
+[![详细文档](https://img.shields.io/badge/详细文档-blue)](https://ewigl.github.io/notes/posts/programming/github-actions/)
+
+[![PicACG-Auto-Checkin](https://github.com/ewigl/picacg-auto-checkin/actions/workflows/Checkin.yml/badge.svg)](https://github.com/ewigl/picacg-auto-checkin/actions/workflows/Checkin.yml)
 
 ### 使用
 
