@@ -8,6 +8,7 @@ on:
 
 jobs:
   checkin:
+    name: Checkin
     runs-on: ubuntu-latest
     environment: PICACG
     env:
