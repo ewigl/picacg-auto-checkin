@@ -19,4 +19,4 @@
 ### 环境变量
 
 - **Environments**: `PICACG`
-- **Secrets**:`EMAIL`, `PASSWD`
+- **Secrets**:`EMAIL`, `PASSWD` 
