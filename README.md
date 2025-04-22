@@ -1,4 +1,4 @@
-## PicACG 哔咔漫画 定时自动签到 （打哔咔）
+## PicACG 定时自动签到 
 
 > 利用 Github Actions 定时任务实现自动签到。
 
