@@ -10,7 +10,6 @@ jobs:
   checkin:
     name: Checkin
     runs-on: ubuntu-latest
-    environment: PICACG
     env:
       EMAIL: ${{ secrets.EMAIL }}
       PASSWD: ${{ secrets.PASSWD }}
