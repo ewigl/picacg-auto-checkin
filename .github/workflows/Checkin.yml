@@ -11,8 +11,7 @@ jobs:
     name: Checkin
     runs-on: ubuntu-latest
     env:
-      EMAIL: ${{ secrets.EMAIL }}
-      PASSWD: ${{ secrets.PASSWD }}
+      ACCOUNTS: ${{ secrets.ACCOUNTS }}
 
     steps:
       - uses: actions/checkout@v4

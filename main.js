@@ -26,13 +26,7 @@ const STAIC_HEADERS = {
 
 function handleError(response) {
   throw new Error(
-    "Response Error" +
-      " - " +
-      response.code +
-      " - " +
-      response.error +
-      " - " +
-      response.message
+    `签到失败: ${response.code} / ${response.error} / ${response.message} / ${response.detail}`
   );
 }
 
@@ -64,38 +58,42 @@ function generateHeaders(method, path) {
 }
 
 // get token
-async function signIn(email, passwd) {
-  let headers = generateHeaders("POST", SIGN_IN_PATH);
+async function signIn(account) {
+  console.log(`【${account.name}】: 登录中...`);
 
-  let postBody = JSON.stringify({
-    email,
-    password: passwd,
+  const headers = generateHeaders("POST", SIGN_IN_PATH);
+
+  const postBody = JSON.stringify({
+    email: account.email,
+    password: account.passwd,
   });
 
-  let response = await fetch(HOST + SIGN_IN_PATH, {
+  const response = await fetch(HOST + SIGN_IN_PATH, {
     method: "POST",
     headers,
     body: postBody,
   });
 
-  response = await response.json();
+  const responseJson = await response.json();
 
-  if (response.code !== 200) {
-    handleError(response);
+  if (responseJson.code !== 200) {
+    handleError(responseJson);
   }
 
-  return response.data.token;
+  return { ...account, token: responseJson.data.token };
 }
 
 // punch in
-async function punchIn(token) {
+async function punchIn(account) {
+  console.log(`【${account.name}】: 打哔咔中...`);
+
   let headers = generateHeaders("POST", PUNCH_IN_PATH);
 
   let response = await fetch(HOST + PUNCH_IN_PATH, {
     method: "POST",
     headers: {
       ...headers,
-      Authorization: token,
+      Authorization: account.token,
     },
   });
 
@@ -105,32 +103,54 @@ async function punchIn(token) {
     let res = response.data.res;
 
     if (res.status === "ok") {
-      console.log("成功打哔咔。");
+      console.log(`【${account.name}】: 成功打哔咔。`);
+      return `成功打哔咔。`;
     } else if (res.status === "fail") {
-      console.log("今天已经打过哔咔了。");
+      console.log(`【${account.name}】: 今天已经打过哔咔了。`);
+      return `今天已经打过哔咔了。`;
     }
   } else {
     handleError(response);
   }
 }
 
-async function main() {
-  let email = "";
-  let passwd = "";
+// 处理
+async function processSingleAccount(account) {
+  const cookedAccount = await signIn(account);
 
-  if (process.env.EMAIL && process.env.PASSWD) {
-    email = process.env.EMAIL;
-    passwd = process.env.PASSWD;
+  const punchInResult = await punchIn(cookedAccount);
+
+  return punchInResult;
+}
+
+async function main() {
+  let accounts;
+
+  if (process.env.ACCOUNTS) {
+    try {
+      accounts = JSON.parse(process.env.ACCOUNTS);
+    } catch (error) {
+      console.log("❌ 账户信息配置格式错误。");
+      process.exit(1);
+    }
   } else {
-    console.log("未检测到环境变量。");
+    console.log("❌ 未配置账户信息。");
     process.exit(1);
   }
 
-  // Sign in to get the token.
-  let token = await signIn(email, passwd);
+  const allPromises = accounts.map((account) => processSingleAccount(account));
+  const results = await Promise.allSettled(allPromises);
 
-  // Punch in.
-  punchIn(token);
+  console.log(`\n======== 签到结果 ========\n`);
+
+  results.forEach((result, index) => {
+    const accountName = accounts[index].name;
+    if (result.status === "fulfilled") {
+      console.log(`【${accountName}】: ✅ ${result.value}`);
+    } else {
+      console.error(`【${accountName}】: ❌ ${result.reason.message}`);
+    }
+  });
 }
 
 main();

@@ -6643,7 +6643,7 @@ var STAIC_HEADERS = {
 };
 function handleError(response) {
   throw new Error(
-    "Response Error - " + response.code + " - " + response.error + " - " + response.message
+    `\u7B7E\u5230\u5931\u8D25: ${response.code} / ${response.error} / ${response.message} / ${response.detail}`
   );
 }
 function getSignature(path, time, nonce, method) {
@@ -6664,56 +6664,79 @@ function generateHeaders(method, path) {
     time
   };
 }
-async function signIn(email, passwd) {
-  let headers = generateHeaders("POST", SIGN_IN_PATH);
-  let postBody = JSON.stringify({
-    email,
-    password: passwd
+async function signIn(account) {
+  console.log(`\u3010${account.name}\u3011: \u767B\u5F55\u4E2D...`);
+  const headers = generateHeaders("POST", SIGN_IN_PATH);
+  const postBody = JSON.stringify({
+    email: account.email,
+    password: account.passwd
   });
-  let response = await fetch(HOST + SIGN_IN_PATH, {
+  const response = await fetch(HOST + SIGN_IN_PATH, {
     method: "POST",
     headers,
     body: postBody
   });
-  response = await response.json();
-  if (response.code !== 200) {
-    handleError(response);
+  const responseJson = await response.json();
+  if (responseJson.code !== 200) {
+    handleError(responseJson);
   }
-  return response.data.token;
+  return { ...account, token: responseJson.data.token };
 }
-async function punchIn(token) {
+async function punchIn(account) {
+  console.log(`\u3010${account.name}\u3011: \u6253\u54D4\u5494\u4E2D...`);
   let headers = generateHeaders("POST", PUNCH_IN_PATH);
   let response = await fetch(HOST + PUNCH_IN_PATH, {
     method: "POST",
     headers: {
       ...headers,
-      Authorization: token
+      Authorization: account.token
     }
   });
   response = await response.json();
   if (response.code === 200) {
     let res = response.data.res;
     if (res.status === "ok") {
-      console.log("\u6210\u529F\u6253\u54D4\u5494\u3002");
+      console.log(`\u3010${account.name}\u3011: \u6210\u529F\u6253\u54D4\u5494\u3002`);
+      return `\u6210\u529F\u6253\u54D4\u5494\u3002`;
     } else if (res.status === "fail") {
-      console.log("\u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u54D4\u5494\u4E86\u3002");
+      console.log(`\u3010${account.name}\u3011: \u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u54D4\u5494\u4E86\u3002`);
+      return `\u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u54D4\u5494\u4E86\u3002`;
     }
   } else {
     handleError(response);
   }
 }
+async function processSingleAccount(account) {
+  const cookedAccount = await signIn(account);
+  const punchInResult = await punchIn(cookedAccount);
+  return punchInResult;
+}
 async function main() {
-  let email = "";
-  let passwd = "";
-  if (process.env.EMAIL && process.env.PASSWD) {
-    email = process.env.EMAIL;
-    passwd = process.env.PASSWD;
+  let accounts;
+  if (process.env.ACCOUNTS) {
+    try {
+      accounts = JSON.parse(process.env.ACCOUNTS);
+    } catch (error) {
+      console.log("\u274C \u8D26\u6237\u4FE1\u606F\u914D\u7F6E\u683C\u5F0F\u9519\u8BEF\u3002");
+      process.exit(1);
+    }
   } else {
-    console.log("\u672A\u68C0\u6D4B\u5230\u73AF\u5883\u53D8\u91CF\u3002");
+    console.log("\u274C \u672A\u914D\u7F6E\u8D26\u6237\u4FE1\u606F\u3002");
     process.exit(1);
   }
-  let token = await signIn(email, passwd);
-  punchIn(token);
+  const allPromises = accounts.map((account) => processSingleAccount(account));
+  const results = await Promise.allSettled(allPromises);
+  console.log(`
+======== \u7B7E\u5230\u7ED3\u679C ========
+`);
+  results.forEach((result, index) => {
+    const accountName = accounts[index].name;
+    if (result.status === "fulfilled") {
+      console.log(`\u3010${accountName}\u3011: \u2705 ${result.value}`);
+    } else {
+      console.error(`\u3010${accountName}\u3011: \u274C ${result.reason.message}`);
+    }
+  });
 }
 main();
 /*! Bundled license information:
