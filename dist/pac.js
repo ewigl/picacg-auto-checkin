@@ -6630,6 +6630,7 @@ function v4(options, buf, offset) {
 var v4_default = v4;
 
 // main.js
+var import_fs = require("fs");
 var HOST = "https://picaapi.picacomic.com/";
 var SIGN_IN_PATH = "auth/sign-in";
 var PUNCH_IN_PATH = "users/punch-in";
@@ -6718,7 +6719,7 @@ async function processSingleAccount(account) {
   return punchInResult;
 }
 function setGitHubOutput(name, value) {
-  appendFileSync(process.env.GITHUB_OUTPUT, `${name}<<EOF
+  (0, import_fs.appendFileSync)(process.env.GITHUB_OUTPUT, `${name}<<EOF
 ${value}
 EOF
 `);
