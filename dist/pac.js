@@ -6671,7 +6671,7 @@ function generateHeaders(method, path) {
   };
 }
 async function signIn(account) {
-  console.log(`\u3010${account.name}\u3011: \u767B\u5F55\u4E2D...`);
+  console.log(`${account.name}: \u767B\u5F55\u4E2D...`);
   const headers = generateHeaders("POST", SIGN_IN_PATH);
   const postBody = JSON.stringify({
     email: account.email,
@@ -6689,7 +6689,7 @@ async function signIn(account) {
   return { ...account, token: responseJson.data.token };
 }
 async function punchIn(account) {
-  console.log(`\u3010${account.name}\u3011: \u6253\u54D4\u5494\u4E2D...`);
+  console.log(`${account.name}: \u6253\u54D4\u5494\u4E2D...`);
   let headers = generateHeaders("POST", PUNCH_IN_PATH);
   let response = await fetch(HOST + PUNCH_IN_PATH, {
     method: "POST",
@@ -6702,10 +6702,10 @@ async function punchIn(account) {
   if (response.code === 200) {
     let res = response.data.res;
     if (res.status === "ok") {
-      console.log(`\u3010${account.name}\u3011: \u6210\u529F\u6253\u54D4\u5494\u3002`);
+      console.log(`${account.name}: \u6210\u529F\u6253\u54D4\u5494\u3002`);
       return `\u6210\u529F\u6253\u54D4\u5494\u3002`;
     } else if (res.status === "fail") {
-      console.log(`\u3010${account.name}\u3011: \u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u54D4\u5494\u4E86\u3002`);
+      console.log(`${account.name}: \u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u54D4\u5494\u4E86\u3002`);
       return `\u4ECA\u5929\u5DF2\u7ECF\u6253\u8FC7\u54D4\u5494\u4E86\u3002`;
     }
   } else {
@@ -6717,17 +6717,23 @@ async function processSingleAccount(account) {
   const punchInResult = await punchIn(cookedAccount);
   return punchInResult;
 }
+function setGitHubOutput(name, value) {
+  appendFileSync(process.env.GITHUB_OUTPUT, `${name}<<EOF
+${value}
+EOF
+`);
+}
 async function main() {
   let accounts;
-  if (process.env.ACCOUNTS) {
-    try {
-      accounts = JSON.parse(process.env.ACCOUNTS);
-    } catch (error) {
-      console.log("\u274C \u8D26\u6237\u4FE1\u606F\u914D\u7F6E\u683C\u5F0F\u9519\u8BEF\u3002");
-      process.exit(1);
+  try {
+    if (!process.env.ACCOUNTS) {
+      throw new Error("\u274C \u672A\u914D\u7F6E\u8D26\u6237\u4FE1\u606F\u3002");
     }
-  } else {
-    console.log("\u274C \u672A\u914D\u7F6E\u8D26\u6237\u4FE1\u606F\u3002");
+    accounts = JSON.parse(process.env.ACCOUNTS);
+  } catch (error) {
+    const message = `\u274C ${error.message.includes("JSON") ? "\u8D26\u6237\u4FE1\u606F\u914D\u7F6E\u683C\u5F0F\u9519\u8BEF\u3002" : error.message}`;
+    console.error(message);
+    setGitHubOutput("result", message);
     process.exit(1);
   }
   const allPromises = accounts.map((account) => processSingleAccount(account));
@@ -6735,14 +6741,17 @@ async function main() {
   console.log(`
 ======== \u7B7E\u5230\u7ED3\u679C ========
 `);
-  results.forEach((result, index) => {
+  const resultLines = results.map((result, index) => {
     const accountName = accounts[index].name;
-    if (result.status === "fulfilled") {
-      console.log(`\u3010${accountName}\u3011: \u2705 ${result.value}`);
-    } else {
-      console.error(`\u3010${accountName}\u3011: \u274C ${result.reason.message}`);
-    }
+    const isSuccess = result.status === "fulfilled";
+    const icon = isSuccess ? "\u2705" : "\u274C";
+    const message = isSuccess ? result.value : result.reason.message;
+    const line = `${accountName}: ${icon} ${message}`;
+    isSuccess ? console.log(line) : console.error(line);
+    return line;
   });
+  const resultMsg = resultLines.join("\n");
+  setGitHubOutput("result", resultMsg);
 }
 main();
 /*! Bundled license information:

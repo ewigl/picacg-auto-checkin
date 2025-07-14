@@ -59,7 +59,7 @@ function generateHeaders(method, path) {
 
 // get token
 async function signIn(account) {
-  console.log(`【${account.name}】: 登录中...`);
+  console.log(`${account.name}: 登录中...`);
 
   const headers = generateHeaders("POST", SIGN_IN_PATH);
 
@@ -85,7 +85,7 @@ async function signIn(account) {
 
 // punch in
 async function punchIn(account) {
-  console.log(`【${account.name}】: 打哔咔中...`);
+  console.log(`${account.name}: 打哔咔中...`);
 
   let headers = generateHeaders("POST", PUNCH_IN_PATH);
 
@@ -103,10 +103,10 @@ async function punchIn(account) {
     let res = response.data.res;
 
     if (res.status === "ok") {
-      console.log(`【${account.name}】: 成功打哔咔。`);
+      console.log(`${account.name}: 成功打哔咔。`);
       return `成功打哔咔。`;
     } else if (res.status === "fail") {
-      console.log(`【${account.name}】: 今天已经打过哔咔了。`);
+      console.log(`${account.name}: 今天已经打过哔咔了。`);
       return `今天已经打过哔咔了。`;
     }
   } else {
@@ -123,18 +123,25 @@ async function processSingleAccount(account) {
   return punchInResult;
 }
 
+function setGitHubOutput(name, value) {
+  appendFileSync(process.env.GITHUB_OUTPUT, `${name}<<EOF\n${value}\nEOF\n`);
+}
+
 async function main() {
   let accounts;
 
-  if (process.env.ACCOUNTS) {
-    try {
-      accounts = JSON.parse(process.env.ACCOUNTS);
-    } catch (error) {
-      console.log("❌ 账户信息配置格式错误。");
-      process.exit(1);
+  try {
+    if (!process.env.ACCOUNTS) {
+      throw new Error("❌ 未配置账户信息。");
     }
-  } else {
-    console.log("❌ 未配置账户信息。");
+
+    accounts = JSON.parse(process.env.ACCOUNTS);
+  } catch (error) {
+    const message = `❌ ${
+      error.message.includes("JSON") ? "账户信息配置格式错误。" : error.message
+    }`;
+    console.error(message);
+    setGitHubOutput("result", message);
     process.exit(1);
   }
 
@@ -143,14 +150,23 @@ async function main() {
 
   console.log(`\n======== 签到结果 ========\n`);
 
-  results.forEach((result, index) => {
+  const resultLines = results.map((result, index) => {
     const accountName = accounts[index].name;
-    if (result.status === "fulfilled") {
-      console.log(`【${accountName}】: ✅ ${result.value}`);
-    } else {
-      console.error(`【${accountName}】: ❌ ${result.reason.message}`);
-    }
+
+    const isSuccess = result.status === "fulfilled";
+    const icon = isSuccess ? "✅" : "❌";
+    const message = isSuccess ? result.value : result.reason.message;
+
+    const line = `${accountName}: ${icon} ${message}`;
+
+    isSuccess ? console.log(line) : console.error(line);
+
+    return line;
   });
+
+  const resultMsg = resultLines.join("\n");
+
+  setGitHubOutput("result", resultMsg);
 }
 
 main();
