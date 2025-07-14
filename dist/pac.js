@@ -24,9 +24,9 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 ));
 
-// node_modules/crypto-js/core.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/core.js
 var require_core = __commonJS({
-  "node_modules/crypto-js/core.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/core.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory();
@@ -632,9 +632,9 @@ var require_core = __commonJS({
   }
 });
 
-// node_modules/crypto-js/x64-core.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/x64-core.js
 var require_x64_core = __commonJS({
-  "node_modules/crypto-js/x64-core.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/x64-core.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -889,9 +889,9 @@ var require_x64_core = __commonJS({
   }
 });
 
-// node_modules/crypto-js/lib-typedarrays.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/lib-typedarrays.js
 var require_lib_typedarrays = __commonJS({
-  "node_modules/crypto-js/lib-typedarrays.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/lib-typedarrays.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -934,9 +934,9 @@ var require_lib_typedarrays = __commonJS({
   }
 });
 
-// node_modules/crypto-js/enc-utf16.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/enc-utf16.js
 var require_enc_utf16 = __commonJS({
-  "node_modules/crypto-js/enc-utf16.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/enc-utf16.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -1052,9 +1052,9 @@ var require_enc_utf16 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/enc-base64.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/enc-base64.js
 var require_enc_base64 = __commonJS({
-  "node_modules/crypto-js/enc-base64.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/enc-base64.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -1160,9 +1160,9 @@ var require_enc_base64 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/enc-base64url.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/enc-base64url.js
 var require_enc_base64url = __commonJS({
-  "node_modules/crypto-js/enc-base64url.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/enc-base64url.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -1279,9 +1279,9 @@ var require_enc_base64url = __commonJS({
   }
 });
 
-// node_modules/crypto-js/md5.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/md5.js
 var require_md5 = __commonJS({
-  "node_modules/crypto-js/md5.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/md5.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -1458,9 +1458,9 @@ var require_md5 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/sha1.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha1.js
 var require_sha1 = __commonJS({
-  "node_modules/crypto-js/sha1.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha1.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -1549,9 +1549,9 @@ var require_sha1 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/sha256.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha256.js
 var require_sha256 = __commonJS({
-  "node_modules/crypto-js/sha256.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha256.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -1670,9 +1670,9 @@ var require_sha256 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/sha224.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha224.js
 var require_sha224 = __commonJS({
-  "node_modules/crypto-js/sha224.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha224.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_sha256());
@@ -1715,9 +1715,9 @@ var require_sha224 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/sha512.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha512.js
 var require_sha512 = __commonJS({
-  "node_modules/crypto-js/sha512.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha512.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_x64_core());
@@ -1997,9 +1997,9 @@ var require_sha512 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/sha384.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha384.js
 var require_sha384 = __commonJS({
-  "node_modules/crypto-js/sha384.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha384.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_x64_core(), require_sha512());
@@ -2043,9 +2043,9 @@ var require_sha384 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/sha3.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha3.js
 var require_sha3 = __commonJS({
-  "node_modules/crypto-js/sha3.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/sha3.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_x64_core());
@@ -2245,9 +2245,9 @@ var require_sha3 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/ripemd160.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/ripemd160.js
 var require_ripemd160 = __commonJS({
-  "node_modules/crypto-js/ripemd160.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/ripemd160.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -2716,9 +2716,9 @@ var require_ripemd160 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/hmac.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/hmac.js
 var require_hmac = __commonJS({
-  "node_modules/crypto-js/hmac.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/hmac.js"(exports2, module2) {
     (function(root, factory) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core());
@@ -2823,9 +2823,9 @@ var require_hmac = __commonJS({
   }
 });
 
-// node_modules/crypto-js/pbkdf2.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pbkdf2.js
 var require_pbkdf2 = __commonJS({
-  "node_modules/crypto-js/pbkdf2.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pbkdf2.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_sha256(), require_hmac());
@@ -2921,9 +2921,9 @@ var require_pbkdf2 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/evpkdf.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/evpkdf.js
 var require_evpkdf = __commonJS({
-  "node_modules/crypto-js/evpkdf.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/evpkdf.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_sha1(), require_hmac());
@@ -3012,9 +3012,9 @@ var require_evpkdf = __commonJS({
   }
 });
 
-// node_modules/crypto-js/cipher-core.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/cipher-core.js
 var require_cipher_core = __commonJS({
-  "node_modules/crypto-js/cipher-core.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/cipher-core.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_evpkdf());
@@ -3656,9 +3656,9 @@ var require_cipher_core = __commonJS({
   }
 });
 
-// node_modules/crypto-js/mode-cfb.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-cfb.js
 var require_mode_cfb = __commonJS({
-  "node_modules/crypto-js/mode-cfb.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-cfb.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3708,9 +3708,9 @@ var require_mode_cfb = __commonJS({
   }
 });
 
-// node_modules/crypto-js/mode-ctr.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ctr.js
 var require_mode_ctr = __commonJS({
-  "node_modules/crypto-js/mode-ctr.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ctr.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3748,9 +3748,9 @@ var require_mode_ctr = __commonJS({
   }
 });
 
-// node_modules/crypto-js/mode-ctr-gladman.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ctr-gladman.js
 var require_mode_ctr_gladman = __commonJS({
-  "node_modules/crypto-js/mode-ctr-gladman.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ctr-gladman.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3823,9 +3823,9 @@ var require_mode_ctr_gladman = __commonJS({
   }
 });
 
-// node_modules/crypto-js/mode-ofb.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ofb.js
 var require_mode_ofb = __commonJS({
-  "node_modules/crypto-js/mode-ofb.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ofb.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3861,9 +3861,9 @@ var require_mode_ofb = __commonJS({
   }
 });
 
-// node_modules/crypto-js/mode-ecb.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ecb.js
 var require_mode_ecb = __commonJS({
-  "node_modules/crypto-js/mode-ecb.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/mode-ecb.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3892,9 +3892,9 @@ var require_mode_ecb = __commonJS({
   }
 });
 
-// node_modules/crypto-js/pad-ansix923.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-ansix923.js
 var require_pad_ansix923 = __commonJS({
-  "node_modules/crypto-js/pad-ansix923.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-ansix923.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3924,9 +3924,9 @@ var require_pad_ansix923 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/pad-iso10126.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-iso10126.js
 var require_pad_iso10126 = __commonJS({
-  "node_modules/crypto-js/pad-iso10126.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-iso10126.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3952,9 +3952,9 @@ var require_pad_iso10126 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/pad-iso97971.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-iso97971.js
 var require_pad_iso97971 = __commonJS({
-  "node_modules/crypto-js/pad-iso97971.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-iso97971.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -3979,9 +3979,9 @@ var require_pad_iso97971 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/pad-zeropadding.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-zeropadding.js
 var require_pad_zeropadding = __commonJS({
-  "node_modules/crypto-js/pad-zeropadding.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-zeropadding.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -4013,9 +4013,9 @@ var require_pad_zeropadding = __commonJS({
   }
 });
 
-// node_modules/crypto-js/pad-nopadding.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-nopadding.js
 var require_pad_nopadding = __commonJS({
-  "node_modules/crypto-js/pad-nopadding.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/pad-nopadding.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -4036,9 +4036,9 @@ var require_pad_nopadding = __commonJS({
   }
 });
 
-// node_modules/crypto-js/format-hex.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/format-hex.js
 var require_format_hex = __commonJS({
-  "node_modules/crypto-js/format-hex.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/format-hex.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_cipher_core());
@@ -4096,9 +4096,9 @@ var require_format_hex = __commonJS({
   }
 });
 
-// node_modules/crypto-js/aes.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/aes.js
 var require_aes = __commonJS({
-  "node_modules/crypto-js/aes.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/aes.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_enc_base64(), require_md5(), require_evpkdf(), require_cipher_core());
@@ -4250,9 +4250,9 @@ var require_aes = __commonJS({
   }
 });
 
-// node_modules/crypto-js/tripledes.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/tripledes.js
 var require_tripledes = __commonJS({
-  "node_modules/crypto-js/tripledes.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/tripledes.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_enc_base64(), require_md5(), require_evpkdf(), require_cipher_core());
@@ -5031,9 +5031,9 @@ var require_tripledes = __commonJS({
   }
 });
 
-// node_modules/crypto-js/rc4.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/rc4.js
 var require_rc4 = __commonJS({
-  "node_modules/crypto-js/rc4.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/rc4.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_enc_base64(), require_md5(), require_evpkdf(), require_cipher_core());
@@ -5114,9 +5114,9 @@ var require_rc4 = __commonJS({
   }
 });
 
-// node_modules/crypto-js/rabbit.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/rabbit.js
 var require_rabbit = __commonJS({
-  "node_modules/crypto-js/rabbit.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/rabbit.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_enc_base64(), require_md5(), require_evpkdf(), require_cipher_core());
@@ -5243,9 +5243,9 @@ var require_rabbit = __commonJS({
   }
 });
 
-// node_modules/crypto-js/rabbit-legacy.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/rabbit-legacy.js
 var require_rabbit_legacy = __commonJS({
-  "node_modules/crypto-js/rabbit-legacy.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/rabbit-legacy.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_enc_base64(), require_md5(), require_evpkdf(), require_cipher_core());
@@ -5369,9 +5369,9 @@ var require_rabbit_legacy = __commonJS({
   }
 });
 
-// node_modules/crypto-js/blowfish.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/blowfish.js
 var require_blowfish = __commonJS({
-  "node_modules/crypto-js/blowfish.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/blowfish.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_enc_base64(), require_md5(), require_evpkdf(), require_cipher_core());
@@ -6558,9 +6558,9 @@ var require_blowfish = __commonJS({
   }
 });
 
-// node_modules/crypto-js/index.js
+// node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/index.js
 var require_crypto_js = __commonJS({
-  "node_modules/crypto-js/index.js"(exports2, module2) {
+  "node_modules/.pnpm/crypto-js@4.2.0/node_modules/crypto-js/index.js"(exports2, module2) {
     (function(root, factory, undef) {
       if (typeof exports2 === "object") {
         module2.exports = exports2 = factory(require_core(), require_x64_core(), require_lib_typedarrays(), require_enc_utf16(), require_enc_base64(), require_enc_base64url(), require_md5(), require_sha1(), require_sha256(), require_sha224(), require_sha512(), require_sha384(), require_sha3(), require_ripemd160(), require_hmac(), require_pbkdf2(), require_evpkdf(), require_cipher_core(), require_mode_cfb(), require_mode_ctr(), require_mode_ctr_gladman(), require_mode_ofb(), require_mode_ecb(), require_pad_ansix923(), require_pad_iso10126(), require_pad_iso97971(), require_pad_zeropadding(), require_pad_nopadding(), require_format_hex(), require_aes(), require_tripledes(), require_rc4(), require_rabbit(), require_rabbit_legacy(), require_blowfish());
@@ -6578,7 +6578,7 @@ var require_crypto_js = __commonJS({
 // main.js
 var import_crypto_js = __toESM(require_crypto_js());
 
-// node_modules/uuid/dist/esm/stringify.js
+// node_modules/.pnpm/uuid@11.1.0/node_modules/uuid/dist/esm/stringify.js
 var byteToHex = [];
 for (let i = 0; i < 256; ++i) {
   byteToHex.push((i + 256).toString(16).slice(1));
@@ -6587,7 +6587,7 @@ function unsafeStringify(arr, offset = 0) {
   return (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
 }
 
-// node_modules/uuid/dist/esm/rng.js
+// node_modules/.pnpm/uuid@11.1.0/node_modules/uuid/dist/esm/rng.js
 var import_crypto = require("crypto");
 var rnds8Pool = new Uint8Array(256);
 var poolPtr = rnds8Pool.length;
@@ -6599,21 +6599,27 @@ function rng() {
   return rnds8Pool.slice(poolPtr, poolPtr += 16);
 }
 
-// node_modules/uuid/dist/esm/native.js
+// node_modules/.pnpm/uuid@11.1.0/node_modules/uuid/dist/esm/native.js
 var import_crypto2 = require("crypto");
 var native_default = { randomUUID: import_crypto2.randomUUID };
 
-// node_modules/uuid/dist/esm/v4.js
+// node_modules/.pnpm/uuid@11.1.0/node_modules/uuid/dist/esm/v4.js
 function v4(options, buf, offset) {
   if (native_default.randomUUID && !buf && !options) {
     return native_default.randomUUID();
   }
   options = options || {};
-  const rnds = options.random || (options.rng || rng)();
+  const rnds = options.random ?? options.rng?.() ?? rng();
+  if (rnds.length < 16) {
+    throw new Error("Random bytes length must be >= 16");
+  }
   rnds[6] = rnds[6] & 15 | 64;
   rnds[8] = rnds[8] & 63 | 128;
   if (buf) {
     offset = offset || 0;
+    if (offset < 0 || offset + 16 > buf.length) {
+      throw new RangeError(`UUID byte range ${offset}:${offset + 15} is out of buffer bounds`);
+    }
     for (let i = 0; i < 16; ++i) {
       buf[offset + i] = rnds[i];
     }
