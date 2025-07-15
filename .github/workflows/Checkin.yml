@@ -3,8 +3,9 @@ name: PicACG-Auto-Checkin
 on:
   workflow_dispatch:
   schedule:
-    # UTC+8 08:00
-    - cron: "0 0 * * *"
+    # Actions 任务延迟过高，提前一些时间。
+    # UTC+8 ~ 07:33
+    - cron: "33 23 * * *"
 
 jobs:
   checkin:
@@ -14,7 +15,6 @@ jobs:
       ACCOUNTS: ${{ secrets.ACCOUNTS }}
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
       TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
-
 
     steps:
       - uses: actions/checkout@v4
