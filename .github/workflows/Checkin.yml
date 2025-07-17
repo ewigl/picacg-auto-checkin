@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   schedule:
     # Actions 任务延迟过高，提前一些时间。
-    # UTC+8 ~ 07:33
-    - cron: "33 23 * * *"
+    # UTC+8 - 08:33 ~ 09:00
+    - cron: "33 0 * * *"
 
 jobs:
   checkin:
