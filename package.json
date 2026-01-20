@@ -2,8 +2,7 @@
   "name": "picacg-auto-checkin",
   "version": "24.11.05",
   "scripts": {
-    "build": "esbuild main.js --bundle --platform=node --outfile=dist/pac.js",
-    "build-web": "esbuild main.webapi.js --bundle --platform=node --outfile=dist/pac.webapi.js"
+    "build": "esbuild main.js --bundle --platform=node --outfile=dist/pac.js"
   },
   "dependencies": {
     "crypto-js": "^4.2.0",

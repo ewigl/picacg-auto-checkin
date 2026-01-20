@@ -32,7 +32,7 @@
 2. 在 fork 后的仓库中启用 Actions。
 3. 配置仓库变量。
 
-详细文档: https://ewigl.github.io/notes/posts/programming/github-actions/
+详细文档: https://ewigl.github.io/projects/github-actions-tasks/
 
 ### 注意事项
 
